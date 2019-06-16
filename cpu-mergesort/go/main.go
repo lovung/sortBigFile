@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/lovung/sortBigFile/lib/golib"
 	"math/rand"
 	"time"
-	"github.com/lovung/sortBigFile/lib/golib"
 )
 
 func main() {
@@ -77,7 +77,6 @@ func mergeSortV1(s []int) []int {
 
 // MergeSort Runs MergeSort algorithm on a slice single
 func mergeSortV2(slice []int) []int {
-
 	if len(slice) < 2 {
 		return slice
 	}
@@ -87,7 +86,6 @@ func mergeSortV2(slice []int) []int {
 
 // Merge left and right slice into newly created slice
 func mergeV2(left, right []int) []int {
-
 	size, i, j := len(left)+len(right), 0, 0
 	slice := make([]int, size, size)
 	count := 0

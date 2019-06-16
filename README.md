@@ -198,17 +198,21 @@ ENV: Macbook Pro 2014 15 inch
 
 - https://github.com/kevin-albert/cuda-mergesort
 - https://github.com/khaman1/GPU-QuickSort-Algorithm
+- https://github.com/arisath/Benchmarking-Sorting-Algorithms
+- https://github.com/lettergram/gomergesort
+- https://github.com/shawnsmithdev/zermelo
 - https://gist.github.com/mre/1392067
+- https://gist.github.com/mcvoid/7079156
+- https://gist.github.com/mycodeschool/9678029
+- http://www.golangprograms.com/golang-program-for-implementation-of-quick-sort.html
+- http://www.golangprograms.com/golang-program-for-implementation-of-insertionsort.html
+- http://www.golangprograms.com/golang-program-for-implementation-of-mergesort.html
 - https://www.geeksforgeeks.org/insertion-sort/
 - https://www.geeksforgeeks.org/insertion-sort-for-singly-linked-list/
 - https://www.researchgate.net/profile/Neetu_Faujdar2/publication/283353990_Performance_Evaluation_of_Merge_and_Quick_Sort_using_GPU_Computing_with_CUDA/links/56b9cefb08ae9d9ac67f3145/Performance-Evaluation-of-Merge-and-Quick-Sort-using-GPU-Computing-with-CUDA.pdf
-- https://gist.github.com/mycodeschool/9678029
 - https://www.tutorialspoint.com/data_structures_algorithms/merge_sort_program_in_c.htm
 - https://hackernoon.com/parallel-merge-sort-in-go-fe14c1bc006
-- https://gist.github.com/mcvoid/7079156
-- https://github.com/shawnsmithdev/zermelo
 - https://austingwalters.com/radix-sort-in-go/
 - https://golangbot.com/read-files/
-- http://www.golangprograms.com/golang-program-for-implementation-of-quick-sort.html
-- https://github.com/arisath/Benchmarking-Sorting-Algorithms
-- http://www.golangprograms.com/golang-program-for-implementation-of-insertionsort.html
+- https://medium.com/@houzier.saurav/insertion-sort-golang-2641ed515539
+- https://github.com/duffleit/golang-parallel-mergesort

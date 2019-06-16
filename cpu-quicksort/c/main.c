@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #define LENGTH 1000000
 #define DEBUG 0
@@ -49,7 +50,10 @@ int main(void)
     int i = 0;
     arr = malloc(LENGTH * sizeof(int));
     static const char filename[] = "resources/list_2.txt";
+    clock_t t;
+    t = clock();
     FILE *file = fopen(filename, "r");
+
     if (file != NULL)
     {
         char line[20]; /* or other suitable maximum line size */
@@ -58,6 +62,9 @@ int main(void)
             *(arr + i++) = atoi(line);
         }
 
+        t = clock() - t;
+        printf("Read: %fms\n", ((double)t) * 1000 / CLOCKS_PER_SEC);
+        t = clock();
 #if DEBUG
         printf("Before:\n");
         for (int j = 0; j < LENGTH; j++)
@@ -67,6 +74,9 @@ int main(void)
 #endif
         // qsort(arr, LENGTH, sizeof(int), cmpfunc);
         quicksort(arr, 0, LENGTH);
+        t = clock() - t;
+        printf("Sort: %fs\n", ((double)t) * 1000 / CLOCKS_PER_SEC);
+        t = clock();
         FILE *fp;
         fp = fopen("out/out.txt", "w");
         for (int j = 0; j < LENGTH; j++)
@@ -76,6 +86,9 @@ int main(void)
             printf("%d\n", *(arr + j)); /* write the line */
 #endif
         }
+        t = clock() - t;
+        printf("Write: %fs\n", ((double)t) * 1000 / CLOCKS_PER_SEC);
+        t = clock();
         fclose(fp);
         fclose(file);
     }
