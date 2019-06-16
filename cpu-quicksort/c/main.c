@@ -65,8 +65,8 @@ int main(void)
             printf("%d\n", *(arr + j)); /* write the line */
         }
 #endif
-        // qsort(arr, LENGTH, sizeof(int), cmpfunc);
-        quicksort(arr, 0, LENGTH);
+        qsort(arr, LENGTH, sizeof(int), cmpfunc);
+        // quicksort(arr, 0, LENGTH);
         FILE *fp;
         fp = fopen("out/out.txt", "w");
         for (int j = 0; j < LENGTH; j++)

@@ -10,78 +10,58 @@ int cmpfunc(const void *a, const void *b)
     return (*(int *)a - *(int *)b);
 }
 
-// Merges two subarrays of arr[].
-// First subarray is arr[l..m]
-// Second subarray is arr[m+1..r]
-void merge(int arr[], int l, int m, int r)
+// Function to Merge Arrays L and R into A.
+// lefCount = number of elements in L
+// rightCount = number of elements in R.
+void Merge(int *A, int *L, int leftCount, int *R, int rightCount)
 {
     int i, j, k;
-    int n1 = m - l + 1;
-    int n2 = r - m;
 
-    /* create temp arrays */
-    int L[n1], R[n2];
+    // i - to mark the index of left aubarray (L)
+    // j - to mark the index of right sub-raay (R)
+    // k - to mark the index of merged subarray (A)
+    i = 0;
+    j = 0;
+    k = 0;
 
-    /* Copy data to temp arrays L[] and R[] */
-    for (i = 0; i < n1; i++)
-        L[i] = arr[l + i];
-    for (j = 0; j < n2; j++)
-        R[j] = arr[m + 1 + j];
-
-    /* Merge the temp arrays back into arr[l..r]*/
-    i = 0; // Initial index of first subarray
-    j = 0; // Initial index of second subarray
-    k = l; // Initial index of merged subarray
-    while (i < n1 && j < n2)
+    while (i < leftCount && j < rightCount)
     {
-        if (L[i] <= R[j])
-        {
-            arr[k] = L[i];
-            i++;
-        }
+        if (L[i] < R[j])
+            A[k++] = L[i++];
         else
-        {
-            arr[k] = R[j];
-            j++;
-        }
-        k++;
+            A[k++] = R[j++];
     }
-
-    /* Copy the remaining elements of L[], if there 
-       are any */
-    while (i < n1)
-    {
-        arr[k] = L[i];
-        i++;
-        k++;
-    }
-
-    /* Copy the remaining elements of R[], if there 
-       are any */
-    while (j < n2)
-    {
-        arr[k] = R[j];
-        j++;
-        k++;
-    }
+    while (i < leftCount)
+        A[k++] = L[i++];
+    while (j < rightCount)
+        A[k++] = R[j++];
 }
 
-/* l is for left index and r is right index of the 
-   sub-array of arr to be sorted */
-void mergeSort(int arr[], int l, int r)
+// Recursive function to sort an array of integers.
+void MergeSort(int *A, int n)
 {
-    if (l < r)
-    {
-        // Same as (l+r)/2, but avoids overflow for
-        // large l and h
-        int m = l + (r - l) / 2;
+    int mid, i, *L, *R;
+    if (n < 2)
+        return; // base condition. If the array has less than two element, do nothing.
 
-        // Sort first and second halves
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
+    mid = n / 2; // find the mid index.
 
-        merge(arr, l, m, r);
-    }
+    // create left and right subarrays
+    // mid elements (from index 0 till mid-1) should be part of left sub-array
+    // and (n-mid) elements (from mid to n-1) will be part of right sub-array
+    L = (int *)malloc(mid * sizeof(int));
+    R = (int *)malloc((n - mid) * sizeof(int));
+
+    for (i = 0; i < mid; i++)
+        L[i] = A[i]; // creating left subarray
+    for (i = mid; i < n; i++)
+        R[i - mid] = A[i]; // creating right subarray
+
+    MergeSort(L, mid);            // sorting the left subarray
+    MergeSort(R, n - mid);        // sorting the right subarray
+    Merge(A, L, mid, R, n - mid); // Merging L and R into A as sorted list.
+    free(L);
+    free(R);
 }
 
 int main(void)
@@ -90,7 +70,7 @@ int main(void)
     int *arr;
     int arr_size;
     arr = malloc(LENGTH * sizeof(int));
-    static const char filename[] = "list.txt";
+    static const char filename[] = "resources/list.txt";
     FILE *file = fopen(filename, "r");
     if (file != NULL)
     {
@@ -108,10 +88,9 @@ int main(void)
         }
 #endif
         // qsort(arr, LENGTH, sizeof(int), cmpfunc);
-        arr_size = sizeof(arr) / sizeof(arr[0]);
-        mergeSort(arr, 0, arr_size - 1);
+        MergeSort(arr, LENGTH);
         FILE *fp;
-        fp = fopen("out.txt", "w");
+        fp = fopen("out/out.txt", "w");
         for (int j = 0; j < LENGTH; j++)
         {
             fprintf(fp, "%d\n", *(arr + j));
