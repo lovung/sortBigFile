@@ -218,3 +218,4 @@ pip-log.txt
 *.out
 out/
 *main
+resources/

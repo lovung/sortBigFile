@@ -8,7 +8,7 @@ import (
 )
 
 // ReadFile read line by line a file which have integers in every lines
-func ReadFile(filename string, arr *[]int) (largest int) {
+func ReadFile(filename string, arr *[]int) {
 	f, err := os.Open(filename)
 	if err != nil {
 		fmt.Println(err)
@@ -21,16 +21,12 @@ func ReadFile(filename string, arr *[]int) (largest int) {
 	s := bufio.NewScanner(f)
 	for s.Scan() {
 		i, _ := strconv.Atoi(s.Text())
-		if i > largest {
-			largest = i
-		}
 		*arr = append(*arr, i)
 	}
 	err = s.Err()
 	if err != nil {
 		fmt.Println(err)
 	}
-	return largest
 }
 
 // WriteFile write line by line to a file
