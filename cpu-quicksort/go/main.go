@@ -1,16 +1,36 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math/rand"
 	"time"
+	"github.com/lovung/sortBigFile/lib/golib"
 )
 
 func main() {
-	slice := generateSlice(20)
-	fmt.Println("\n--- Unsorted --- \n\n", slice)
+	fi := flag.String("i", "resources/list.txt", "file path to read from")
+	fo := flag.String("o", "out/out.txt", "file path to write from")
+	verbose := flag.Bool("v", false, "verbose")
+	flag.Parse()
+	var slice []int
+
+	t := time.Now()
+	golib.ReadFile(*fi, &slice)
+
+	if *verbose {
+		fmt.Printf("Read: %s\n", time.Since(t))
+		t = time.Now()
+	}
 	quicksort(slice)
-	fmt.Println("\n--- Sorted ---\n\n", slice, "\n")
+	if *verbose {
+		fmt.Printf("Sort: %s\n", time.Since(t))
+		t = time.Now()
+	}
+	golib.WriteFile(*fo, slice, len(slice))
+	if *verbose {
+		fmt.Printf("Write: %s\n", time.Since(t))
+	}
 }
 
 // Generates a slice of size, size filled with random numbers
