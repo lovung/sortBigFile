@@ -21,7 +21,7 @@ func main() {
 
 	t := time.Now()
 	if *debug {
-		slice = rand.Perm(10)
+		slice = rand.Perm(100)
 	} else {
 		golib.ReadFile(*fi, &slice)
 	}

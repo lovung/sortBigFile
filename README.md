@@ -28,24 +28,7 @@ ENV: Macbook Pro 2014 15 inch
     System time (seconds): 0.05
     Percent of CPU this job got: 95%
     Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.72
-    Average shared text size (kbytes): 0
-    Average unshared data size (kbytes): 0
-    Average stack size (kbytes): 0
-    Average total size (kbytes): 0
     Maximum resident set size (kbytes): 20784
-    Average resident set size (kbytes): 0
-    Major (requiring I/O) page faults: 166
-    Minor (reclaiming a frame) page faults: 5253
-    Voluntary context switches: 2
-    Involuntary context switches: 171
-    Swaps: 0
-    File system inputs: 0
-    File system outputs: 0
-    Socket messages sent: 0
-    Socket messages received: 0
-    Signals delivered: 0
-    Page size (bytes): 4096
-    Exit status: 0
 ```
 ### gpu-mergesort
 ```
@@ -54,24 +37,7 @@ ENV: Macbook Pro 2014 15 inch
     System time (seconds): 0.05
     Percent of CPU this job got: 98%
     Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.36
-    Average shared text size (kbytes): 0
-    Average unshared data size (kbytes): 0
-    Average stack size (kbytes): 0
-    Average total size (kbytes): 0
     Maximum resident set size (kbytes): 24368
-    Average resident set size (kbytes): 0
-    Major (requiring I/O) page faults: 170
-    Minor (reclaiming a frame) page faults: 6145
-    Voluntary context switches: 0
-    Involuntary context switches: 661
-    Swaps: 0
-    File system inputs: 0
-    File system outputs: 0
-    Socket messages sent: 0
-    Socket messages received: 0
-    Signals delivered: 0
-    Page size (bytes): 4096
-    Exit status: 0
 ```
 
 ### cpu-mergesort/c
@@ -81,24 +47,7 @@ ENV: Macbook Pro 2014 15 inch
     System time (seconds): 0.02
     Percent of CPU this job got: 98%
     Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.58
-    Average shared text size (kbytes): 0
-    Average unshared data size (kbytes): 0
-    Average stack size (kbytes): 0
-    Average total size (kbytes): 0
     Maximum resident set size (kbytes): 14176
-    Average resident set size (kbytes): 0
-    Major (requiring I/O) page faults: 0
-    Minor (reclaiming a frame) page faults: 3674
-    Voluntary context switches: 0
-    Involuntary context switches: 269
-    Swaps: 0
-    File system inputs: 0
-    File system outputs: 0
-    Socket messages sent: 0
-    Socket messages received: 0
-    Signals delivered: 0
-    Page size (bytes): 4096
-    Exit status: 0
 ```
 
 ### cpu-mergesort/go
@@ -108,26 +57,8 @@ ENV: Macbook Pro 2014 15 inch
     System time (seconds): 0.06
     Percent of CPU this job got: 114%
     Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.34
-    Average shared text size (kbytes): 0
-    Average unshared data size (kbytes): 0
-    Average stack size (kbytes): 0
-    Average total size (kbytes): 0
     Maximum resident set size (kbytes): 51172
-    Average resident set size (kbytes): 0
-    Major (requiring I/O) page faults: 0
-    Minor (reclaiming a frame) page faults: 12926
-    Voluntary context switches: 0
-    Involuntary context switches: 11155
-    Swaps: 0
-    File system inputs: 0
-    File system outputs: 0
-    Socket messages sent: 0
-    Socket messages received: 0
-    Signals delivered: 0
-    Page size (bytes): 4096
-    Exit status: 0
 ```
-
 
 ### cpu-quicksort/c
 ```
@@ -136,25 +67,9 @@ ENV: Macbook Pro 2014 15 inch
     System time (seconds): 0.01
     Percent of CPU this job got: 99%
     Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.33
-    Average shared text size (kbytes): 0
-    Average unshared data size (kbytes): 0
-    Average stack size (kbytes): 0
-    Average total size (kbytes): 0
     Maximum resident set size (kbytes): 4776
-    Average resident set size (kbytes): 0
-    Major (requiring I/O) page faults: 0
-    Minor (reclaiming a frame) page faults: 1323
-    Voluntary context switches: 0
-    Involuntary context switches: 45
-    Swaps: 0
-    File system inputs: 0
-    File system outputs: 0
-    Socket messages sent: 0
-    Socket messages received: 0
-    Signals delivered: 0
-    Page size (bytes): 4096
-    Exit status: 0
 ```
+
 ### cpu-quicksort/go
 ```
     Command being timed: "./cpu-quicksort/go/main -i=resources/list.txt"
@@ -162,24 +77,7 @@ ENV: Macbook Pro 2014 15 inch
     System time (seconds): 0.05
     Percent of CPU this job got: 108%
     Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.31
-    Average shared text size (kbytes): 0
-    Average unshared data size (kbytes): 0
-    Average stack size (kbytes): 0
-    Average total size (kbytes): 0
     Maximum resident set size (kbytes): 35628
-    Average resident set size (kbytes): 0
-    Major (requiring I/O) page faults: 0
-    Minor (reclaiming a frame) page faults: 9043
-    Voluntary context switches: 0
-    Involuntary context switches: 6846
-    Swaps: 0
-    File system inputs: 0
-    File system outputs: 0
-    Socket messages sent: 0
-    Socket messages received: 0
-    Signals delivered: 0
-    Page size (bytes): 4096
-    Exit status: 0
 ```
 
 # II. Tool 2: Hyperfine
@@ -216,3 +114,5 @@ ENV: Macbook Pro 2014 15 inch
 - https://golangbot.com/read-files/
 - https://medium.com/@houzier.saurav/insertion-sort-golang-2641ed515539
 - https://github.com/duffleit/golang-parallel-mergesort
+- https://github.com/PiotrSypek/pradsort
+- https://rosettacode.org/wiki/Sorting_algorithms/Radix_sort#Go
