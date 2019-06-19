@@ -25,7 +25,7 @@ __device__ void gpu_bottomUpMerge(long *, long *, long, long, long);
 int tm();
 
 #define min(a, b) (a < b ? a : b)
-#define MAX_LENGTH 1048576
+#define MAX_LENGTH 1000000001
 
 int readfile(char *filename, long *buffer)
 {

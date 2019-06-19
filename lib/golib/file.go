@@ -3,9 +3,34 @@ package golib
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"strconv"
 )
+
+// ReadWholeFile read whole file which have integers in every lines
+func ReadWholeFile(filename string, arr *[]int) {
+	data, _ := ioutil.ReadFile(filename)
+	var lasti, val int
+	for i, v := range data {
+		if v == '\n' {
+			val, _ = strconv.Atoi(string(data[lasti : i-1]))
+			*arr = append(*arr, val)
+			lasti = i + 1
+		}
+	}
+}
+
+// WriteWholeFile write all data to a file once
+func WriteWholeFile(filename string, arr []int) {
+	var buffer []byte
+	for _, val := range arr {
+		buffer = append(buffer, []byte(strconv.Itoa(val))...)
+		buffer = append(buffer, byte('\n'))
+	}
+
+	ioutil.WriteFile(filename, buffer, 0644)
+}
 
 // ReadFile read line by line a file which have integers in every lines
 func ReadFile(filename string, arr *[]int) {

@@ -99,9 +99,18 @@ ENV: Macbook Pro 2014 15 inch
 - https://github.com/arisath/Benchmarking-Sorting-Algorithms
 - https://github.com/lettergram/gomergesort
 - https://github.com/shawnsmithdev/zermelo
+- https://github.com/duffleit/golang-parallel-mergesort
+- https://github.com/PiotrSypek/pradsort
+- https://github.com/DaniloNovakovic/sorting-algorithms-in-c
+- https://github.com/SurajGupta/r-source
+- https://github.com/bartobri/data-structures-c/tree/master/arrays/LSD-radix-sort
+- https://github.com/AwardOfSky/Fast-Radix-Sort/blob/master/radix.c
+- https://github.com/yourbasic/radix/blob/master/sort.go
+- https://github.com/twotwotwo/sorts/blob/bf5c1f2b85/parallel.go
 - https://gist.github.com/mre/1392067
 - https://gist.github.com/mcvoid/7079156
 - https://gist.github.com/mycodeschool/9678029
+- https://gist.github.com/avinoamr/5163a982e7a50714a9f98c67ec3e097e
 - http://www.golangprograms.com/golang-program-for-implementation-of-quick-sort.html
 - http://www.golangprograms.com/golang-program-for-implementation-of-insertionsort.html
 - http://www.golangprograms.com/golang-program-for-implementation-of-mergesort.html
@@ -113,6 +122,5 @@ ENV: Macbook Pro 2014 15 inch
 - https://austingwalters.com/radix-sort-in-go/
 - https://golangbot.com/read-files/
 - https://medium.com/@houzier.saurav/insertion-sort-golang-2641ed515539
-- https://github.com/duffleit/golang-parallel-mergesort
-- https://github.com/PiotrSypek/pradsort
+- https://medium.com/basecs/getting-to-the-root-of-sorting-with-radix-sort-f8e9240d4224
 - https://rosettacode.org/wiki/Sorting_algorithms/Radix_sort#Go

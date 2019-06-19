@@ -22,7 +22,7 @@ func main() {
 	if *debug {
 		slice = rand.Perm(10)
 	} else {
-		golib.ReadFile(*fi, &slice)
+		golib.ReadWholeFile(*fi, &slice)
 	}
 	if *verbose {
 		fmt.Printf("Read: %s\n", time.Since(t))
@@ -39,7 +39,7 @@ func main() {
 	}
 
 	if !(*debug) {
-		golib.WriteFile(*fo, slice, len(slice))
+		golib.WriteWholeFile(*fo, slice)
 	}
 	if *verbose {
 		fmt.Printf("Write: %s\n", time.Since(t))
