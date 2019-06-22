@@ -14,7 +14,7 @@ func ReadWholeFile(filename string, arr *[]int) {
 	var lasti, val int
 	for i, v := range data {
 		if v == '\n' {
-			val, _ = strconv.Atoi(string(data[lasti : i-1]))
+			val, _ = strconv.Atoi(string(data[lasti:i]))
 			*arr = append(*arr, val)
 			lasti = i + 1
 		}

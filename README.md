@@ -107,6 +107,8 @@ ENV: Macbook Pro 2014 15 inch
 - https://github.com/AwardOfSky/Fast-Radix-Sort/blob/master/radix.c
 - https://github.com/yourbasic/radix/blob/master/sort.go
 - https://github.com/twotwotwo/sorts/blob/bf5c1f2b85/parallel.go
+- https://github.com/AlekSi/cgo-by-example
+- https://github.com/chamaken/cgolmnl
 - https://gist.github.com/mre/1392067
 - https://gist.github.com/mcvoid/7079156
 - https://gist.github.com/mycodeschool/9678029
